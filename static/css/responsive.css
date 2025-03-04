@@ -1,5 +1,5 @@
-﻿/*Large Device*/
-@media only screen and (min-width: 1200px) and (max-width : 1870px) {
+﻿/* Desktop Large */
+@media only screen and (min-width: 1200px) {
     header .container-fluid {
         padding-left: 15px;
         padding-right: 15px;
@@ -8,18 +8,17 @@
     .header-area-v1 .header-navigation .navigation-area .primary-menu {
         padding-right: 15px;
     }
-    .header-area-v2 .header-navigation .main-menu ul li > a{
+    .header-navigation .main-menu ul li > a {
         font-size: 14px;
     }
-    .header-area-v2 .nav-menu {
-        padding-left: 0px;
+    .nav-menu {
+        padding-left: 0;
     }
-    .header-area-v2 .header-right ul li {
-        display: inline-block;
+    .header-right ul li {
         margin-left: 10px;
     }
-    .header-area-v2 .header-right ul li .search-btn{
-        padding: 43px 20px;
+    .header-right .search-btn {
+        padding: 20px;
     }
 }
 
