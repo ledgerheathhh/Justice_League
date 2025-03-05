@@ -13,11 +13,22 @@
 	<link rel="stylesheet" href="static/css/responsive.css">
 </head>
 <body data-spy="scroll" data-target=".main-menu" data-offset="0">
+<header class="header-area-v1 transparent-header">
+    <div class="header-navigation">
+        <div class="site-branding">
+            <div class="brand-logo">
+                <div class="logo-text">
+                    <h3><a href="index.html" class="back-home">< Back</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 <section class="about-area-v1 pt-120 pb-40" id="about">
 	<div class="container">
 		<div class="row align-items-xl-center">
 			<div class="col-lg-6">
-				<div><img src="static/picture/p2640651471.jpg" alt=""></div>
+				<div class="hero-image"><img src="static/picture/p2640651471.jpg" alt="Superman" class="img-hover-effect"></div>
 			</div>
 			<div class="col-lg-6">
 				<div class="about-content-box mb-80">
@@ -44,5 +55,21 @@
 <script src="static/js/jquery.waypoints.js"></script>
 <script src="static/js/wow.min.js"></script>
 <script src="static/js/custom.js"></script>
+<style>
+.back-home { color: #333; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; }
+.back-home:hover { color: #666; transform: translateX(-5px); }
+.back-home i { font-size: 1.2em; margin-right: 8px; transition: transform 0.3s ease; }
+.back-home:hover i { transform: translateX(-3px); }
+.img-hover-effect { transition: transform 0.3s; }
+.img-hover-effect:hover { transform: scale(1.05); }
+.hero-image { overflow: hidden; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.about-content-box p { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.8s forwards; }
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+.about-content-box p:nth-child(2) { animation-delay: 0.2s; }
+.about-content-box p:nth-child(3) { animation-delay: 0.4s; }
+.about-content-box p:nth-child(4) { animation-delay: 0.6s; }
+</style>
 </body>
 </html>
