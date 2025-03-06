@@ -154,6 +154,34 @@ body{
     background-size: cover;
     background-position: center;
 }
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
+    z-index: 1;
+}
+
+.hero-content, .hero-img {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content .span {
+    color: #FFAA17;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    margin: 15px 0;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
 /* container css */
 @media only screen and (min-width: 1201px){
     .container {
@@ -353,6 +381,24 @@ body{
     text-transform: capitalize;
     padding: 40px 15px;
     line-height: 1;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.header-navigation .main-menu ul li > a:before {
+    content: '';
+    position: absolute;
+    bottom: 30px;
+    left: 15px;
+    width: 0;
+    height: 2px;
+    background-color: #FFAA17;
+    transition: all 0.3s ease;
+}
+
+.header-navigation .main-menu ul li > a:hover:before,
+.header-navigation .main-menu ul li > a.nav-link.active:before {
+    width: calc(100% - 30px);
 }
 .header-area-v2 .header-navigation .main-menu ul li.menu-item-has-children > a:after{
     color: #222429;
@@ -419,6 +465,7 @@ body{
 .header-area-v1 .main-menu ul li > a.nav-link,
 .header-navigation .main-menu ul li:hover > a.nav-link {
     color: #FFAA17;
+    transform: translateY(-3px);
 }
 .header-navigation .main-menu ul li:hover > .sub-menu {
     opacity: 1;
@@ -1376,20 +1423,26 @@ header .container-fluid{
 
 .team-members .single-team-member {
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 10px;
 	position: relative;
 	cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+}
+.team-members .single-team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 .team-members .single-team-member .team-img img {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
-    -webkit-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
 }
-.team-members .single-team-member .single-team-member:hover .team-img img {
+.team-members .single-team-member:hover .team-img img {
     -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
             transform: scale(1.1);
@@ -1403,7 +1456,7 @@ header .container-fluid{
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 25px 33px;
     -webkit-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
@@ -1411,6 +1464,7 @@ header .container-fluid{
     opacity: 0;
     visibility: hidden;
 	border-left: 3px solid #FFAA17;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 .team-members .single-team-member .member-info h5 {
     color: #fff;
@@ -1726,6 +1780,16 @@ header .container-fluid{
 
 /*===== 10. Start Blog Section ==========*/
 
+.blog-area-v1 .blog-post-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+}
+.blog-area-v1 .blog-post-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
 .blog-area-v1 .blog-post-item:hover .post-thumbnail .blog-date {
     top: 20px;
     opacity: 1;
@@ -1735,6 +1799,7 @@ header .container-fluid{
     bottom: -30px;
     opacity: 1;
     visibility: visible;
+    background: rgba(255,170,23,0.05);
 }
 .blog-area-v1 .blog-post-item .post-thumbnail {
     position: relative;
@@ -1743,8 +1808,9 @@ header .container-fluid{
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
-    -webkit-filter: grayscale(1);
-            filter: grayscale(1);
+    -webkit-filter: grayscale(0.5);
+            filter: grayscale(0.5);
+    transition: all 0.5s ease;
 }
 .blog-area-v1 .blog-post-item .post-thumbnail .blog-date {
     position: absolute;
@@ -1802,6 +1868,16 @@ header .container-fluid{
 .blog-area-v2 {
     background-color: #F0F4F9;
 }
+.blog-area-v2 .blog-post-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+}
+.blog-area-v2 .blog-post-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
 .blog-area-v2 .blog-post-item:hover .post-thumbnail img{
     -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
@@ -1812,9 +1888,9 @@ header .container-fluid{
     overflow: hidden;
 }
 .blog-area-v2 .blog-post-item .post-thumbnail img{
-    -webkit-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 .blog-area-v2 .blog-post-item .post-thumbnail .tag {
     position: absolute;

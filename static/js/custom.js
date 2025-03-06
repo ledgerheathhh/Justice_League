@@ -93,6 +93,29 @@
             scrollTop: 0,
         }, 1500);
     });
+    
+    //===== Smooth scrolling for navigation
+    $('.page_scroll').on('click', function(event) {
+        event.preventDefault();
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 70
+            }, 1000);
+        }
+    });
+    
+    //===== Add active class to nav items on scroll
+    $(window).on('scroll', function() {
+        var scrollDistance = $(window).scrollTop();
+        $('.page_scroll').each(function() {
+            var sectionOffset = $(this.getAttribute('href')).offset().top - 100;
+            if (scrollDistance >= sectionOffset) {
+                $('.nav-link').removeClass('active');
+                $(this).addClass('active');
+            }
+        });
+    });
     //==== slick slider
     $('.testimonial-slider-one').slick({
         dots: false,
