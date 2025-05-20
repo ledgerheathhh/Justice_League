@@ -1,23 +1,29 @@
 @import './base.css';
 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 #app {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   font-weight: normal;
 }
 
-a,
-.green {
+a {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: #0078D7;
   transition: 0.4s;
-  padding: 3px;
 }
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    background-color: rgba(0, 120, 215, 0.1);
   }
 }
 
@@ -29,7 +35,8 @@ a,
 
   #app {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    grid-template-columns: 1fr;
+    padding: 0;
+    width: 100%;
   }
 }
